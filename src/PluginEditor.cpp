@@ -15,11 +15,21 @@ PluginHostSGAudioProcessorEditor::PluginHostSGAudioProcessorEditor (PluginHostSG
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (400, 300);
+    setLookAndFeel(&lookAndfeel);
+
+    addAndMakeVisible(scanButton);
+    scanButton.setButtonText("Scan");
+
+    scanButton.onClick = []() {
+      juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::InfoIcon, "Test", "Hello world!");
+    };
+
+    setSize (1024, 720);
 }
 
 PluginHostSGAudioProcessorEditor::~PluginHostSGAudioProcessorEditor()
 {
+    setLookAndFeel(nullptr);
 }
 
 //==============================================================================
@@ -37,4 +47,5 @@ void PluginHostSGAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
+    scanButton.setBounds(0, 0, 100, 30);
 }

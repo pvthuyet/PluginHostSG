@@ -1,0 +1,10 @@
+@startuml
+class PluginHostSGAudioProcessor
+class PluginHostSGAudioProcessorEditor
+PluginHostSGAudioProcessor *-- PluginHostSGAudioProcessorEditor
+PluginHostSGAudioProcessorEditor ..> PluginHostSGAudioProcessor : use
+class SgLookAndFeel
+PluginHostSGAudioProcessorEditor *-- SgLookAndFeel
+class Scanner
+PluginHostSGAudioProcessorEditor ..> Scanner : use
+@enduml

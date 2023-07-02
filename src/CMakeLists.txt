@@ -8,7 +8,7 @@ set(plugin_name "PluginHostSG")
 juce_add_plugin(${plugin_name}
     PRODUCT_NAME "PluginHostSG"
     VERSION "${project_version}"
-    COMPANY_COPYRIGHT "© 2023 Saigon AT"
+    COMPANY_COPYRIGHT "ï¿½ 2023 Saigon AT"
     COMPANY_NAME "Saigon Audio Technology"
     COMPANY_WEBSITE "www.SaigonAudioTechnology.com"
     FORMATS VST3 AU Standalone
@@ -37,6 +37,9 @@ target_sources(${plugin_name} PRIVATE
     PluginEditor.cpp
     PluginProcessor.h
     PluginProcessor.cpp
+
+    SgLookAndFeel.h
+    SgLookAndFeel.cpp
 )
 
 target_link_libraries(${plugin_name}
